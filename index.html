@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h1>ระบบบันทึกข้อมูลนักเรียนด้วย Web Apps </h1>
+ <!-- การสร้างกล่องข้อความรับข้อมูล เลขประจำตัวนักเรียน -->
+    <form accept=" ">
+       <label for=" "> เลขประจำตัวนักเรียน </label>
+       <input type="text" id="ตัวแปรที่1">
+    </form>
+
+ <!-- การสร้างกล่องข้อความ ชื่อ-สกุล -->
+    <form accept=" ">
+       <label for=" "> ชื่อ-สกุล </label>
+       <input type="text" id="ตัวแปรที่2">
+    </form>
+<br>
+<button id="btn">บันทึกข้อมูล </button> 
+
+<!--การใช้ JavaScript -->
+  <script>
+    document.getElementById("btn").addEventListener("click",submit);  /*เมื่อมีการคลิกที่ปุ่ม id ชื่อ btn ให้เรียกใช้งานฟังก์ชัน submit*/
+    
+    function submit(){
+    var ตัวแปรที่1 =  document.getElementById("ตัวแปรที่1").value;
+    var ตัวแปรที่2 =  document.getElementById("ตัวแปรที่2").value;
+    google.script.run.saveData(ตัวแปรที่1,ตัวแปรที่2);
+    document.getElementById("ตัวแปรที่1").value="";
+    document.getElementById("ตัวแปรที่2").value="";
+      }
+  </script>
+
+  </body>
+</html>
